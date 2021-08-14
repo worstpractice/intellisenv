@@ -1,2 +1,2 @@
 # ts-env
-My intellisense is tingling 💡
+TypeScript + .env = 💡

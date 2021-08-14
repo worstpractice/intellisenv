@@ -1,0 +1,38 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {},
+    "prefix": "C:\\Users\\WorstPractice\\.pnpm-store\\v3\\tmp\\_npx\\11756\\5"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "C:\\Users\\WorstPractice\\.pnpm-store\\v3",
+    "virtualStoreDir": "C:\\Users\\WorstPractice\\.pnpm-store\\v3\\tmp\\_npx\\11756\\5\\node_modules\\.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "C:\\Users\\WorstPractice\\.pnpm-store\\v3\\tmp\\_npx\\11756\\5",
+    "stage": "resolution_started"
+  },
+  "4 error pnpm": {
+    "code": "ERR_PNPM_FETCH_404",
+    "hint": "ts-env is not in the npm registry, or you have no permission to fetch it.\n\nAn authorization header was used: Bearer 6494[hidden]",
+    "request": {
+      "authHeaderValue": "Bearer 6494d9ad-7ce8-43af-8844-3d1ff894d3d8",
+      "url": "https://registry.npmjs.org/ts-env"
+    },
+    "response": {
+      "size": 0,
+      "timeout": 60000
+    },
+    "pkgName": "ts-env",
+    "pkgsStack": [],
+    "err": {
+      "name": "Error",
+      "message": "GET https://registry.npmjs.org/ts-env: Not Found - 404",
+      "code": "ERR_PNPM_FETCH_404",
+      "stack": "Error: GET https://registry.npmjs.org/ts-env: Not Found - 404\n    at RetryOperation._fn (C:\\Users\\WorstPractice\\AppData\\Roaming\\npm\\pnpm-global\\5\\node_modules\\.pnpm\\pnpm@6.12.0\\node_modules\\pnpm\\dist\\pnpm.cjs:85129:18)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+    }
+  }
+}
