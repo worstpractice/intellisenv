@@ -1,4 +1,9 @@
-#! /usr/bin/env node
 import { argv } from 'process';
-const args = argv.slice(2);
+import { dotEnvToTypeScript } from './env2Ts.js';
+import { toTrimmed } from './utils/strings/toTrimmed.js';
+const args = new Set(argv.slice(2).map(toTrimmed).filter(Boolean));
 console.log(args);
+dotEnvToTypeScript('.env', {
+    isDebug: args.has('--debug'),
+    isDryRun: args.has('--dry'),
+});
