@@ -1,10 +1,10 @@
 {
   "author": "worstpractice",
+  "bin": {
+    "ts-env": "bin/index.js"
+  },
   "bugs": {
     "url": "https://github.com/worstpractice/ts-env/issues"
-  },
-  "bin": {
-    "ts-env": "dist/bin/index.js"
   },
   "description": "TypeScript + .env = 💡",
   "devDependencies": {
@@ -21,7 +21,7 @@
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
   },
-  "exports": "./dist/index.js",
+  "exports": "./bin/index.js",
   "files": [
     "dist"
   ],
@@ -29,10 +29,10 @@
   "keywords": [
     ".env",
     "env",
-    "dotenv",
+    "dotenv"
   ],
   "license": "MIT",
-  "name": "ts-env",
+  "name": "@worstpractice/ts-env",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/worstpractice/ts-env.git"
@@ -46,6 +46,6 @@
     "tidy": "pnpm run lint:fix && pnpm run fmt"
   },
   "type": "module",
-  "types": "dist/index.d.ts",
+  "types": "./bin/index.d.ts",
   "version": "1.0.0"
 }

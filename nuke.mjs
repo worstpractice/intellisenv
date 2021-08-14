@@ -11,7 +11,7 @@ const nuke = async () => {
   // @ts-ignore we know, node 12. we know.
   const rm = promises.rm || promises.rmdir;
 
-  await rm(`${getProjectRoot()}/dist`, { recursive: true });
+  await rm(`${getProjectRoot()}/bin`, { recursive: true });
 };
 
 const noOp = () => {};

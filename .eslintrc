@@ -310,6 +310,7 @@
     "unicorn/no-zero-fractions": "off",
     "unicorn/number-literal-case": "off",
     "unicorn/prefer-add-event-listener": "off",
+    "unicorn/prefer-node-protocol": "off",
     "unicorn/prefer-query-selector": "off",
     "unicorn/prefer-spread": "off",
     "unicorn/prevent-abbreviations": "off",
