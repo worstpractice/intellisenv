@@ -1,3 +1,4 @@
 #! /usr/bin/env node
-console.log('I ran holmes!');
-export {};
+import { argv } from 'process';
+const args = argv.slice(2);
+console.log(args);
