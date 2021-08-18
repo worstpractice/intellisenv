@@ -1,2 +1,2 @@
-# ts-env
-TypeScript + .env = 💡
+# intellisenv
+.env ☞ .env.d.ts
