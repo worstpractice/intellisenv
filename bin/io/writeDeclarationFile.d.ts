@@ -1,1 +1,1 @@
-export declare const writeDeclarationFile: (moduleAugmentation: string) => boolean;
+export declare const writeDeclarationFile: <T extends `${string}.d.ts`>(writeToPath: T, moduleAugmentation: string) => boolean;

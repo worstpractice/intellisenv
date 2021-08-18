@@ -41,6 +41,7 @@
     "build": "node ./nuke.mjs && tsc",
     "fmt": "prettier -u --config .prettierrc -w ./src/**/*.{d.ts,ts}",
     "lint": "eslint ./src --ext .d.ts,.ts",
+    "start": "pnpm build && node ./bin/index.js",
     "lint:fix": "eslint ./src --ext .d.ts,.ts --fix",
     "prepare": "pnpm run build",
     "tidy": "pnpm run lint:fix && pnpm run fmt"

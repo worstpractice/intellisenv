@@ -1,3 +1,3 @@
-export const toAssignment = ([key, value]) => {
-    return `${key}: \`${value}\``;
+export const toAssignment = ([key]) => {
+    return `${key}: string`;
 };

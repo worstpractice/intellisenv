@@ -1,1 +1,1 @@
-export type InterfaceField = `    readonly ${string}: \`${string}\`;\n`;
+export type InterfaceField = `    readonly ${Uppercase<string>}: string;\n`;

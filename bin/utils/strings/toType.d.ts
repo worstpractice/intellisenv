@@ -1,1 +1,1 @@
-export declare const toType: <T extends string, U extends string>([key, value]: readonly [T, U]) => readonly [T, U];
+export declare const toType: <T extends string, U extends string>([key]: readonly [T, U]) => readonly [T, U];

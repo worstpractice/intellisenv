@@ -7,8 +7,8 @@ const defaults = {
     isDebug: false,
     isDryRun: true,
 };
-export const dotEnvToTypeScript = (dotEnvPath, { isDebug, isDryRun } = defaults) => {
-    const path = dotEnvPath.endsWith('.env') ? dotEnvPath : `${dotEnvPath}.env`;
+export const dotEnvToTypeScript = (readFrom, writeTo, { isDebug, isDryRun } = defaults) => {
+    const path = readFrom.endsWith('.env') ? readFrom : `${readFrom}.env`;
     if (isDebug)
         console.log(path);
     const text = readFileSync(path).toString();
@@ -25,5 +25,5 @@ export const dotEnvToTypeScript = (dotEnvPath, { isDebug, isDryRun } = defaults)
         console.log(code);
     if (isDryRun)
         return;
-    writeDeclarationFile(code);
+    writeDeclarationFile(writeTo, code);
 };

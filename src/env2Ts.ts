@@ -5,16 +5,18 @@ import { parseLines } from './lib/parseLines.js';
 import { splitIntoLines } from './lib/splitIntoLines.js';
 import type { Options } from './typings/Options.js';
 import type { ParseResult } from './typings/ParseResult.js';
+import type { ReadFrom } from './typings/ReadFrom.js';
+import type { WriteTo } from './typings/WriteTo.js';
 
 const defaults: Options = {
   isDebug: false,
   isDryRun: true,
 } as const;
 
-export const dotEnvToTypeScript = (dotEnvPath: string, { isDebug, isDryRun }: Options = defaults): void => {
+export const dotEnvToTypeScript = (readFrom: ReadFrom, writeTo: WriteTo, { isDebug, isDryRun }: Options = defaults): void => {
   ////////////////////////////////////////////////////////////////////////////////////////////////
 
-  const path: string = dotEnvPath.endsWith('.env') ? dotEnvPath : `${dotEnvPath}.env`;
+  const path: string = readFrom.endsWith('.env') ? readFrom : `${readFrom}.env`;
 
   if (isDebug) console.log(path);
 
@@ -46,7 +48,7 @@ export const dotEnvToTypeScript = (dotEnvPath: string, { isDebug, isDryRun }: Op
 
   if (isDryRun) return;
 
-  writeDeclarationFile(code);
+  writeDeclarationFile(writeTo, code);
 
   ////////////////////////////////////////////////////////////////////////////////////////////////
 };

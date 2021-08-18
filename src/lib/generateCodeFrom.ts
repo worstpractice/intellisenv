@@ -7,12 +7,10 @@ import { addNewLine } from '../utils/strings/addNewLine.js';
 import { addReadonly } from '../utils/strings/addReadonly.js';
 import { addSemicolon } from '../utils/strings/addSemicolon.js';
 import { toAssignment } from '../utils/strings/toAssignment.js';
-import { toType } from '../utils/strings/toType.js';
 
 export const generateCodeFrom = (parsed: ParseResult): string => {
   const fields: readonly InterfaceField[] = Object.entries(parsed)
     //
-    .map(toType)
     .map(toAssignment)
     .map(addReadonly)
     .map(addIndentation)
