@@ -1,8 +1,7 @@
 {
   "author": "worstpractice",
   "bin": {
-    "@worstpractice/ts-env": "./bin/index.js",
-    "ts-env": "./bin/index.js"
+    "@worstpractice/ts-env": "./bin/index.js"
   },
   "bugs": {
     "url": "https://github.com/worstpractice/ts-env/issues"
@@ -49,5 +48,5 @@
   },
   "type": "module",
   "types": "./bin/index.d.ts",
-  "version": "1.0.5"
+  "version": "1.0.6"
 }
