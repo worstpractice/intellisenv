@@ -4,8 +4,6 @@ import type { ReadFrom } from './typings/ReadFrom.js';
 import type { WriteTo } from './typings/WriteTo.js';
 import { toTrimmed } from './utils/strings/toTrimmed.js';
 
-console.clear();
-
 const PROJECT_ROOT = cwd();
 
 const readFrom: ReadFrom = `${PROJECT_ROOT}\\.env` as const;
