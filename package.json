@@ -1,7 +1,7 @@
 {
   "author": "worstpractice",
   "bin": {
-    "@worstpractice/ts-env": "./bin/index.js"
+    "intellisenv": "./bin/index.js"
   },
   "bugs": {
     "url": "https://github.com/worstpractice/ts-env/issues"
@@ -23,7 +23,7 @@
   },
   "exports": "./bin/index.js",
   "files": [
-    "dist"
+    "bin"
   ],
   "homepage": "https://github.com/worstpractice/ts-env#readme",
   "keywords": [
@@ -32,7 +32,7 @@
     "dotenv"
   ],
   "license": "MIT",
-  "name": "@worstpractice/ts-env",
+  "name": "intellisenv",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/worstpractice/ts-env.git"
