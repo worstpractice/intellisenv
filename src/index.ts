@@ -1,5 +1,5 @@
 import { argv, cwd } from 'process';
-import { dotEnvToTypeScript } from './env2Ts.js';
+import { dotEnvToTypeScript } from './dotEnvToTypeScript.js';
 import type { ReadFrom } from './typings/ReadFrom.js';
 import type { WriteTo } from './typings/WriteTo.js';
 import { toTrimmed } from './utils/strings/toTrimmed.js';
