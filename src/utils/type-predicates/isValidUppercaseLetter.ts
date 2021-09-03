@@ -1,4 +1,4 @@
-import { UPPERCASE_LETTERS } from '../../data/UPPERCASE_LETTERS.js';
+import { UPPERCASE_LETTERS } from '../../constants/input/UPPERCASE_LETTERS.js';
 import type { ValidUppercaseLetter } from '../../typings/ValidUppercaseLetter.js';
 
 export const isValidUppercaseLetter = (char: string | undefined): char is ValidUppercaseLetter => {

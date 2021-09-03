@@ -1,17 +1,15 @@
-import { argv, cwd } from 'process';
+import { join } from 'path';
+import { argv } from 'process';
+import { PROJECT_ROOT } from './constants/PROJECT_ROOT.js';
 import { dotEnvToTypeScript } from './dotEnvToTypeScript.js';
-import type { ReadFrom } from './typings/ReadFrom.js';
-import type { WriteTo } from './typings/WriteTo.js';
 import { toTrimmed } from './utils/strings/toTrimmed.js';
 
-const PROJECT_ROOT = cwd();
-
-const readFrom: ReadFrom = `${PROJECT_ROOT}\\.env` as const;
-const writeTo: WriteTo = `${PROJECT_ROOT}\\.env.d.ts` as const;
+const readFrom = join(PROJECT_ROOT, '.env');
+const writeTo = join(PROJECT_ROOT, '.env.d.ts');
 
 const flags = new Set(argv.slice(2).map(toTrimmed).filter(Boolean));
 
-dotEnvToTypeScript(readFrom, writeTo, {
+void dotEnvToTypeScript(readFrom, writeTo, {
   isDebug: flags.has('--debug'),
   isDryRun: flags.has('--dry'),
 });

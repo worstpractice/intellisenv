@@ -1,29 +1,9 @@
-import type { RmOptions, WriteFileOptions } from 'fs';
-import { rmSync, writeFileSync } from 'fs';
+import { rm, writeFile } from 'fs/promises';
+import { RM_OPTIONS } from '../constants/RM_OPTIONS';
+import { WRITE_OPTIONS } from '../constants/WRITE_OPTIONS';
 
-const RM_OPTIONS: RmOptions = {
-  force: true,
-} as const;
+export const writeDeclarationFile = async (writeToPath: string, moduleAugmentation: string): Promise<void> => {
+  await rm(writeToPath, RM_OPTIONS);
 
-const WRITE_OPTIONS: WriteFileOptions = {
-  flag: 'a', // appends
-} as const;
-
-let isDebounced = false;
-
-export const writeDeclarationFile = <T extends `${string}.d.ts`>(writeToPath: T, moduleAugmentation: string): boolean => {
-  if (!isDebounced) {
-    rmSync(writeToPath, RM_OPTIONS);
-    isDebounced = true;
-  }
-
-  let isError = false;
-
-  try {
-    writeFileSync(writeToPath, moduleAugmentation, WRITE_OPTIONS);
-  } catch (error: unknown) {
-    isError = Boolean(error);
-  }
-
-  return isError;
+  await writeFile(writeToPath, moduleAugmentation, WRITE_OPTIONS);
 };

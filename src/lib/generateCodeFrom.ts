@@ -1,5 +1,5 @@
-import { DECLARATION_BEGINNING } from '../data/DECLARATION_BEGINNING.js';
-import { DECLARATION_END } from '../data/DECLARATION_END.js';
+import { DECLARATION_BEGINNING } from '../constants/output/DECLARATION_BEGINNING.js';
+import { DECLARATION_END } from '../constants/output/DECLARATION_END.js';
 import type { InterfaceField } from '../typings/InterfaceField.js';
 import type { ParseResult } from '../typings/ParseResult.js';
 import { addIndentation } from '../utils/strings/addIndentation.js';

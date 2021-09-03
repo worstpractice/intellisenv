@@ -8,4 +8,3 @@ declare namespace NodeJS {
     readonly VUE_APP_ENABLE_SERVER: `yes` | `no`;
   }
 }
-
