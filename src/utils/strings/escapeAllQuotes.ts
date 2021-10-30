@@ -1,3 +1,6 @@
 export const escapeAllQuotes = <T extends string>(str: T): string => {
-  return str.replaceAll(`"`, `\\"`).replaceAll(`'`, `\\'`);
+  // prettier-ignore
+  return str
+    .split(`"`).join(`\\"`)
+    .split(`'`).join(`\\'`);
 };
