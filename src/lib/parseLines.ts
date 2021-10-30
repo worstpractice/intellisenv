@@ -1,5 +1,5 @@
 import type { ParseResult } from '../typings/ParseResult.js';
-import { pairsByName } from '../utils/sorting/pairsByName.js';
+import { pairsByName } from '../utils/comparisons/pairsByName.js';
 import { parseLine } from './parseLine.js';
 
 export const parseLines = (lines: readonly string[]): ParseResult => {

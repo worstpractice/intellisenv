@@ -3,8 +3,15 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const getProjectRoot = () => {
-  // @ts-ignore `import.meta` complaints, not a real concern
-  return globalThis.__dirname || dirname(fileURLToPath(import.meta.url));
+  return (
+    globalThis.__dirname ||
+    dirname(
+      fileURLToPath(
+        // @ts-expect-error import.meta` complaints, not a real concern
+        import.meta.url,
+      ),
+    )
+  );
 };
 
 const nuke = async () => {

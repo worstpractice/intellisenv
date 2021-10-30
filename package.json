@@ -8,14 +8,16 @@
   },
   "description": ".env ☞ .env.d.ts",
   "devDependencies": {
-    "@types/node": "14.17.9",
-    "@typescript-eslint/eslint-plugin": "4.30.0",
-    "@typescript-eslint/parser": "4.30.0",
-    "eslint": "7.32.0",
-    "eslint-plugin-unicorn": "35.0.0",
-    "prettier": "2.3.2",
+    "@types/node": "16.11.6",
+    "@typescript-eslint/eslint-plugin": "5.2.0",
+    "@typescript-eslint/parser": "5.2.0",
+    "eslint": "8.1.0",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-regexp": "1.5.0",
+    "eslint-plugin-unicorn": "37.0.1",
+    "prettier": "2.4.1",
     "tslib": "2.3.1",
-    "typescript": "4.5.0-dev.20210903"
+    "typescript": "4.5.0-dev.20211030"
   },
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
@@ -37,15 +39,16 @@
     "url": "git+https://github.com/worstpractice/ts-env.git"
   },
   "scripts": {
-    "build": "node ./nuke.mjs && tsc",
+    "build": "node ./nuke.mjs && tsc && node ./addShebang.mjs && pnpm fmt-build",
     "fmt": "prettier -u --config .prettierrc -w ./src/**/*.{d.ts,ts}",
+    "fmt-build": "prettier -u --config .prettierrc --loglevel=silent -w ./bin/**/*.{js,d.ts}",
     "lint": "eslint ./src --ext .d.ts,.ts",
     "lint:fix": "eslint ./src --ext .d.ts,.ts --fix",
-    "prepare": "pnpm run build",
+    "prepare": "pnpm build",
     "start": "pnpm build && node ./bin/index.js",
-    "tidy": "pnpm run lint:fix && pnpm run fmt"
+    "tidy": "pnpm lint:fix && pnpm fmt"
   },
   "type": "module",
   "types": "./bin/index.d.ts",
-  "version": "1.0.8"
+  "version": "1.0.9"
 }
