@@ -1,10 +1,10 @@
 import { join } from 'path';
-import { argv, on } from 'process';
+import process, { argv } from 'process';
 import { PROJECT_ROOT } from './constants/PROJECT_ROOT.js';
 import { dotEnvToTypeScript } from './dotEnvToTypeScript.js';
 import { toTrimmed } from './utils/strings/toTrimmed.js';
 
-on('unhandledRejection', console.error);
+process.on('unhandledRejection', console.error);
 
 const readFrom = join(PROJECT_ROOT, '.env');
 const writeTo = join(PROJECT_ROOT, '.env.d.ts');
